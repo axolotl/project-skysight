@@ -1,0 +1,10 @@
+/* global provides additional app-wide css settings that are 
+not found in the Meyer Reset */
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
