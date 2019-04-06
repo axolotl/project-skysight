@@ -20,6 +20,9 @@ server.use(helmet())
 server.use(morgan('dev'))
 server.use(cors())
 
+console.log(api_url)
+console.log(api_secret)
+
 // request handlers (return promises)
 const get_stations = () => axios.get(`${api_url}/stations`, auth_header_object)
 
@@ -34,27 +37,27 @@ server.get('/', (req, res) => {
 })
 
 // get basic info for all stations
-server.get('/stations', (req, res) => {
-  get_stations
-    .then(api_res => {
-      res.status(200).json(api_res.data)
-    })
-    .catch(err => {
-      res.status(500).json({ error: 'oops! something went wrong' })
-    })
+server.get('/stations', async (req, res) => {
+  try {
+    const stations = await get_stations()
+
+    res.status(200).json(stations.data)
+  } catch (err) {
+    res.status(500).json({ error: 'oops! something went wrong' })
+  }
 })
 
 // get detailed info for one station
-server.get('/stations/:id', (req, res) => {
+server.get('/stations/:id', async (req, res) => {
   const { id } = req.params
 
-  get_station(id)
-    .then(api_res => {
-      res.status(200).json(api_res.data)
-    })
-    .catch(err => {
-      res.status(500).json({ error: 'oops! something went wrong' })
-    })
+  try {
+    const station = await get_station(id)
+
+    res.status(200).json(station.data)
+  } catch (err) {
+    res.status(500).json({ error: 'oops! something went wrong' })
+  }
 })
 
 // get detailed info for all statsions

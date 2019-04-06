@@ -8,8 +8,20 @@ import moment from 'moment'
 // Temperature
 
 class Station extends Component {
+  state = { time: 0 }
+
+  // componentDidMount() {
+  //   this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000)
+  // }
+
+  // componentWillUnmount() {
+  //   clearInterval(this.interval)
+  // }
+
   render() {
     const { data, scalingFactor } = this.props
+    // console.log(this.state.time)
+    console.log(process.env)
 
     return (
       // scaling factor scales the size of everything to the size of the screen

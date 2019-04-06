@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import axios from 'axios'
 
 import Station from './Station'
 import sampleData from '../sample_data'
+import { loadavg } from 'os'
+
+const serverUrl = process.env.REACT_APP_SERVER
 
 // function for chucking statinos into rows to approximate a square
 const chuckIntoRows = (array, size) => {
@@ -17,7 +21,8 @@ const chuckIntoRows = (array, size) => {
 
 class App extends Component {
   state = {
-    stations: sampleData,
+    error: false,
+    stations: [],
     scalingFactor: 1 // scaling factor is used to scale the size of the text and margins
   }
 
@@ -25,6 +30,7 @@ class App extends Component {
   // in order to pass `this` to the event listener
   componentDidMount = () => {
     this.calculateScalingFactor()
+    this.getStations()
     window.addEventListener('resize', this.calculateScalingFactor)
   }
 
@@ -36,8 +42,19 @@ class App extends Component {
     this.setState({ scalingFactor: window.innerWidth / 1200 })
   }
 
+  getStations = () => {
+    console.log(serverUrl)
+
+    axios
+      .get(`${serverUrl}/stations`)
+      .then(res => {
+        this.setState({ stations: res.data })
+      })
+      .catch(err => this.setState({ error: true }))
+  }
+
   render() {
-    const { stations, scalingFactor } = this.state
+    const { error, stations, scalingFactor } = this.state
 
     // depending on how many stations there are, display data in as
     // close to a square as possible
@@ -45,17 +62,33 @@ class App extends Component {
 
     const chuckedStations = chuckIntoRows(stations, numColumns)
 
-    return (
-      <Container>
-        {chuckedStations.map((row, i) => (
-          <Row key={i}>
-            {row.map((station, i) => (
-              <Station key={i} data={station} scalingFactor={scalingFactor} />
-            ))}
-          </Row>
-        ))}
-      </Container>
-    )
+    if (error) {
+      return (
+        <Container>
+          <Loading scalingFactor={scalingFactor}>
+            oops! error loading data
+          </Loading>
+        </Container>
+      )
+    } else if (!stations.length) {
+      return (
+        <Container>
+          <Loading scalingFactor={scalingFactor}>Loading ...</Loading>
+        </Container>
+      )
+    } else {
+      return (
+        <Container>
+          {chuckedStations.map((row, i) => (
+            <Row key={i}>
+              {row.map((station, i) => (
+                <Station key={i} data={station} scalingFactor={scalingFactor} />
+              ))}
+            </Row>
+          ))}
+        </Container>
+      )
+    }
   }
 }
 
@@ -71,6 +104,10 @@ const Container = styled.div`
 const Row = styled.div`
   display: flex;
   justify-content: space-around;
+`
+
+const Loading = styled.h1`
+  font-size: ${({ scalingFactor }) => `${2.4 * scalingFactor}rem`};
 `
 
 export default App
