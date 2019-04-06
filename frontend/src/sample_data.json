@@ -1,0 +1,522 @@
+[
+  {
+    "Station": "KCHO",
+    "City": "Charlottesville",
+    "State": "VA",
+    "detail": {
+      "meta": {
+        "timestamp": "2019-04-06T18:01:47.066170Z",
+        "cache-timestamp": "2019-04-06T18:01:39.336043Z"
+      },
+      "altimeter": {
+        "repr": "3022",
+        "value": 30.22,
+        "spoken": "three zero point two two"
+      },
+      "clouds": [
+        {
+          "repr": "SCT010",
+          "type": "SCT",
+          "altitude": 10,
+          "modifier": null,
+          "direction": null
+        },
+        {
+          "repr": "OVC090",
+          "type": "OVC",
+          "altitude": 90,
+          "modifier": null,
+          "direction": null
+        }
+      ],
+      "flight_rules": "VFR",
+      "other": [],
+      "sanitized": "KCHO 061707Z 00000KT 10SM SCT010 OVC090 14/09 A3022 RMK AO2 T01390094",
+      "visibility": {
+        "repr": "10",
+        "value": 10,
+        "spoken": "one zero"
+      },
+      "wind_direction": {
+        "repr": "000",
+        "value": 0,
+        "spoken": "zero zero zero"
+      },
+      "wind_gust": null,
+      "wind_speed": {
+        "repr": "00",
+        "value": 0,
+        "spoken": "zero"
+      },
+      "raw": "KCHO 061707Z 00000KT 10SM SCT010 OVC090 14/09 A3022 RMK AO2 T01390094",
+      "station": "KCHO",
+      "time": {
+        "repr": "061707Z",
+        "dt": "2019-04-06T17:07:00Z"
+      },
+      "remarks": "RMK AO2 T01390094",
+      "dewpoint": {
+        "repr": "09",
+        "value": 9,
+        "spoken": "nine"
+      },
+      "remarks_info": {
+        "dewpoint_decimal": {
+          "repr": "9.4",
+          "value": 9.4,
+          "spoken": "nine point four"
+        },
+        "temperature_decimal": {
+          "repr": "13.9",
+          "value": 13.9,
+          "spoken": "one three point nine"
+        }
+      },
+      "runway_visibility": [],
+      "temperature": {
+        "repr": "14",
+        "value": 14,
+        "spoken": "one four"
+      },
+      "wind_variable_direction": [],
+      "units": {
+        "altimeter": "inHg",
+        "altitude": "ft",
+        "temperature": "C",
+        "visibility": "sm",
+        "wind_speed": "kt"
+      }
+    }
+  },
+  {
+    "Station": "KVBW",
+    "City": "Bridgewater",
+    "State": "VA",
+    "detail": {
+      "meta": {
+        "timestamp": "2019-04-06T18:01:25.381072Z",
+        "cache-timestamp": "2019-04-06T18:01:19.947839Z"
+      },
+      "altimeter": {
+        "repr": "3019",
+        "value": 30.19,
+        "spoken": "three zero point one nine"
+      },
+      "clouds": [
+        {
+          "repr": "OVC085",
+          "type": "OVC",
+          "altitude": 85,
+          "modifier": null,
+          "direction": null
+        }
+      ],
+      "flight_rules": "VFR",
+      "other": [],
+      "sanitized": "KVBW 061735Z AUTO 00000KT 10SM OVC085 16/11 A3019 RMK AO1 T01550112",
+      "visibility": {
+        "repr": "10",
+        "value": 10,
+        "spoken": "one zero"
+      },
+      "wind_direction": {
+        "repr": "000",
+        "value": 0,
+        "spoken": "zero zero zero"
+      },
+      "wind_gust": null,
+      "wind_speed": {
+        "repr": "00",
+        "value": 0,
+        "spoken": "zero"
+      },
+      "raw": "KVBW 061735Z AUTO 00000KT 10SM OVC085 16/11 A3019 RMK AO1 T01550112",
+      "station": "KVBW",
+      "time": {
+        "repr": "061735Z",
+        "dt": "2019-04-06T17:35:00Z"
+      },
+      "remarks": "RMK AO1 T01550112",
+      "dewpoint": {
+        "repr": "11",
+        "value": 11,
+        "spoken": "one one"
+      },
+      "remarks_info": {
+        "dewpoint_decimal": {
+          "repr": "11.2",
+          "value": 11.2,
+          "spoken": "one one point two"
+        },
+        "temperature_decimal": {
+          "repr": "15.5",
+          "value": 15.5,
+          "spoken": "one five point five"
+        }
+      },
+      "runway_visibility": [],
+      "temperature": {
+        "repr": "16",
+        "value": 16,
+        "spoken": "one six"
+      },
+      "wind_variable_direction": [],
+      "units": {
+        "altimeter": "inHg",
+        "altitude": "ft",
+        "temperature": "C",
+        "visibility": "sm",
+        "wind_speed": "kt"
+      }
+    }
+  },
+  {
+    "Station": "KSHD",
+    "City": "Weyers Cave",
+    "State": "VA",
+    "detail": {
+      "meta": {
+        "timestamp": "2019-04-06T18:00:56.770481Z",
+        "cache-timestamp": "2019-04-06T17:59:44.399000Z"
+      },
+      "altimeter": {
+        "repr": "3022",
+        "value": 30.22,
+        "spoken": "three zero point two two"
+      },
+      "clouds": [
+        {
+          "repr": "OVC090",
+          "type": "OVC",
+          "altitude": 90,
+          "modifier": null,
+          "direction": null
+        }
+      ],
+      "flight_rules": "VFR",
+      "other": [],
+      "sanitized": "KSHD 061735Z AUTO 34004KT 10SM OVC090 17/10 A3022 RMK AO2 T01700104",
+      "visibility": {
+        "repr": "10",
+        "value": 10,
+        "spoken": "one zero"
+      },
+      "wind_direction": {
+        "repr": "340",
+        "value": 340,
+        "spoken": "three four zero"
+      },
+      "wind_gust": null,
+      "wind_speed": {
+        "repr": "04",
+        "value": 4,
+        "spoken": "four"
+      },
+      "raw": "KSHD 061735Z AUTO 34004KT 10SM OVC090 17/10 A3022 RMK AO2 T01700104",
+      "station": "KSHD",
+      "time": {
+        "repr": "061735Z",
+        "dt": "2019-04-06T17:35:00Z"
+      },
+      "remarks": "RMK AO2 T01700104",
+      "dewpoint": {
+        "repr": "10",
+        "value": 10,
+        "spoken": "one zero"
+      },
+      "remarks_info": {
+        "dewpoint_decimal": {
+          "repr": "10.4",
+          "value": 10.4,
+          "spoken": "one zero point four"
+        },
+        "temperature_decimal": {
+          "repr": "17.0",
+          "value": 17,
+          "spoken": "one seven point zero"
+        }
+      },
+      "runway_visibility": [],
+      "temperature": {
+        "repr": "17",
+        "value": 17,
+        "spoken": "one seven"
+      },
+      "wind_variable_direction": [],
+      "units": {
+        "altimeter": "inHg",
+        "altitude": "ft",
+        "temperature": "C",
+        "visibility": "sm",
+        "wind_speed": "kt"
+      }
+    }
+  },
+  {
+    "Station": "KGVE",
+    "City": "Gordonsville",
+    "State": "VA",
+    "detail": {
+      "meta": {
+        "timestamp": "2019-04-06T18:01:04.644765Z",
+        "cache-timestamp": "2019-04-06T17:59:50.960000Z"
+      },
+      "altimeter": {
+        "repr": "3022",
+        "value": 30.22,
+        "spoken": "three zero point two two"
+      },
+      "clouds": [
+        {
+          "repr": "SCT010",
+          "type": "SCT",
+          "altitude": 10,
+          "modifier": null,
+          "direction": null
+        },
+        {
+          "repr": "OVC095",
+          "type": "OVC",
+          "altitude": 95,
+          "modifier": null,
+          "direction": null
+        }
+      ],
+      "flight_rules": "VFR",
+      "other": [],
+      "sanitized": "KGVE 061730Z AUTO 00000KT 10SM SCT010 OVC095 13/11 A3022 RMK AO1 T01320105",
+      "visibility": {
+        "repr": "10",
+        "value": 10,
+        "spoken": "one zero"
+      },
+      "wind_direction": {
+        "repr": "000",
+        "value": 0,
+        "spoken": "zero zero zero"
+      },
+      "wind_gust": null,
+      "wind_speed": {
+        "repr": "00",
+        "value": 0,
+        "spoken": "zero"
+      },
+      "raw": "KGVE 061730Z AUTO 00000KT 10SM SCT010 OVC095 13/11 A3022 RMK AO1 T01320105",
+      "station": "KGVE",
+      "time": {
+        "repr": "061730Z",
+        "dt": "2019-04-06T17:30:00Z"
+      },
+      "remarks": "RMK AO1 T01320105",
+      "dewpoint": {
+        "repr": "11",
+        "value": 11,
+        "spoken": "one one"
+      },
+      "remarks_info": {
+        "dewpoint_decimal": {
+          "repr": "10.5",
+          "value": 10.5,
+          "spoken": "one zero point five"
+        },
+        "temperature_decimal": {
+          "repr": "13.2",
+          "value": 13.2,
+          "spoken": "one three point two"
+        }
+      },
+      "runway_visibility": [],
+      "temperature": {
+        "repr": "13",
+        "value": 13,
+        "spoken": "one three"
+      },
+      "wind_variable_direction": [],
+      "units": {
+        "altimeter": "inHg",
+        "altitude": "ft",
+        "temperature": "C",
+        "visibility": "sm",
+        "wind_speed": "kt"
+      }
+    }
+  },
+  {
+    "Station": "KW13",
+    "City": "Waynesboro",
+    "State": "VA",
+    "detail": {
+      "meta": {
+        "timestamp": "2019-04-06T18:01:42.812166Z",
+        "cache-timestamp": "2019-04-06T18:01:34.533585Z"
+      },
+      "altimeter": {
+        "repr": "3020",
+        "value": 30.2,
+        "spoken": "three zero point two"
+      },
+      "clouds": [
+        {
+          "repr": "BKN029",
+          "type": "BKN",
+          "altitude": 29,
+          "modifier": null,
+          "direction": null
+        },
+        {
+          "repr": "OVC090",
+          "type": "OVC",
+          "altitude": 90,
+          "modifier": null,
+          "direction": null
+        }
+      ],
+      "flight_rules": "MVFR",
+      "other": [],
+      "sanitized": "KW13 061735Z AUTO 12005KT 10SM BKN029 OVC090 18/10 A3020 RMK AO1 T01760101",
+      "visibility": {
+        "repr": "10",
+        "value": 10,
+        "spoken": "one zero"
+      },
+      "wind_direction": {
+        "repr": "120",
+        "value": 120,
+        "spoken": "one two zero"
+      },
+      "wind_gust": null,
+      "wind_speed": {
+        "repr": "05",
+        "value": 5,
+        "spoken": "five"
+      },
+      "raw": "KW13 061735Z AUTO 12005KT 10SM BKN029 OVC090 18/10 A3020 RMK AO1 T01760101",
+      "station": "KW13",
+      "time": {
+        "repr": "061735Z",
+        "dt": "2019-04-06T17:35:00Z"
+      },
+      "remarks": "RMK AO1 T01760101",
+      "dewpoint": {
+        "repr": "10",
+        "value": 10,
+        "spoken": "one zero"
+      },
+      "remarks_info": {
+        "dewpoint_decimal": {
+          "repr": "10.1",
+          "value": 10.1,
+          "spoken": "one zero point one"
+        },
+        "temperature_decimal": {
+          "repr": "17.6",
+          "value": 17.6,
+          "spoken": "one seven point six"
+        }
+      },
+      "runway_visibility": [],
+      "temperature": {
+        "repr": "18",
+        "value": 18,
+        "spoken": "one eight"
+      },
+      "wind_variable_direction": [],
+      "units": {
+        "altimeter": "inHg",
+        "altitude": "ft",
+        "temperature": "C",
+        "visibility": "sm",
+        "wind_speed": "kt"
+      }
+    }
+  },
+  {
+    "Station": "KIAD",
+    "City": "Washington",
+    "State": "D.C.",
+    "detail": {
+      "meta": {
+        "timestamp": "2019-04-06T18:00:57.373603Z",
+        "cache-timestamp": "2019-04-06T17:59:32.580000Z"
+      },
+      "altimeter": {
+        "repr": "3021",
+        "value": 30.21,
+        "spoken": "three zero point two one"
+      },
+      "clouds": [
+        {
+          "repr": "FEW080",
+          "type": "FEW",
+          "altitude": 80,
+          "modifier": null,
+          "direction": null
+        },
+        {
+          "repr": "SCT120",
+          "type": "SCT",
+          "altitude": 120,
+          "modifier": null,
+          "direction": null
+        }
+      ],
+      "flight_rules": "VFR",
+      "other": [],
+      "sanitized": "KIAD 061752Z VRB03KT 10SM FEW080 SCT120 18/08 A3021 RMK AO2 SLP229 T01780083 10178 20067 58010 $",
+      "visibility": {
+        "repr": "10",
+        "value": 10,
+        "spoken": "one zero"
+      },
+      "wind_direction": {
+        "repr": "VRB",
+        "value": null,
+        "spoken": "variable"
+      },
+      "wind_gust": null,
+      "wind_speed": {
+        "repr": "03",
+        "value": 3,
+        "spoken": "three"
+      },
+      "raw": "KIAD 061752Z VRB03KT 10SM FEW080 SCT120 18/08 A3021 RMK AO2 SLP229 T01780083 10178 20067 58010 $",
+      "station": "KIAD",
+      "time": {
+        "repr": "061752Z",
+        "dt": "2019-04-06T17:52:00Z"
+      },
+      "remarks": "RMK AO2 SLP229 T01780083 10178 20067 58010 $",
+      "dewpoint": {
+        "repr": "08",
+        "value": 8,
+        "spoken": "eight"
+      },
+      "remarks_info": {
+        "dewpoint_decimal": {
+          "repr": "8.3",
+          "value": 8.3,
+          "spoken": "eight point three"
+        },
+        "temperature_decimal": {
+          "repr": "17.8",
+          "value": 17.8,
+          "spoken": "one seven point eight"
+        }
+      },
+      "runway_visibility": [],
+      "temperature": {
+        "repr": "18",
+        "value": 18,
+        "spoken": "one eight"
+      },
+      "wind_variable_direction": [],
+      "units": {
+        "altimeter": "inHg",
+        "altitude": "ft",
+        "temperature": "C",
+        "visibility": "sm",
+        "wind_speed": "kt"
+      }
+    }
+  }
+]

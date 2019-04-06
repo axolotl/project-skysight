@@ -1,25 +1,32 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
+
+import Station from './Station'
+import sampleData from '../sample_data'
 
 class App extends Component {
+  state = {
+    stations: sampleData
+  }
+
   render() {
+    console.log(this.state.stations)
+
+    const { stations } = this.state
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Container>
+        {stations.map((station, i) => (
+          <Station key={i} data={station} />
+        ))}
+      </Container>
     )
   }
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
 
 export default App
