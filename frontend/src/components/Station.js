@@ -18,6 +18,26 @@ class Station extends Component {
           {data.City}, {data.State}
         </p>
         <p>Last updated: {moment(data.detail.meta.timestamp).format('LLLL')}</p>
+
+        <p>
+          Clouds:{' '}
+          {data.detail.clouds.length ? (
+            <ul>
+              {data.detail.clouds.map(type => (
+                <li>{type.repr}</li>
+              ))}
+            </ul>
+          ) : (
+            'skies are clear!'
+          )}
+        </p>
+
+        <p>
+          Wind: {data.detail.wind_speed.repr} knots{' '}
+          {data.detail.wind_direction.repr} degrees
+        </p>
+        <p>Visibility: {data.detail.visibility.repr} SM</p>
+        <p>Temperature: {data.detail.visibility.repr} C</p>
       </Container>
     )
   }
