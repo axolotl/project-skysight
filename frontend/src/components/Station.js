@@ -1,27 +1,41 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import moment from 'moment'
+import axios from 'axios'
 
 // Cloud cover (especially if its broken or overcast)
 // Wind Speed and Direction (direction is degrees relative to north like a weather vane)
 // Visibility (if it's lower than 5 miles)
 // Temperature
 
+const serverUrl = process.env.REACT_APP_SERVER
+
 class Station extends Component {
-  state = { time: 0 }
+  state = { error: false, detail: false }
 
-  // componentDidMount() {
-  //   this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000)
-  // }
+  componentDidMount() {
+    this.getStationData()
+    this.interval = setInterval(() => this.getStationData(), 1000 * 60 * 5)
+  }
 
-  // componentWillUnmount() {
-  //   clearInterval(this.interval)
-  // }
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
+
+  getStationData = () => {
+    const { Station } = this.props.data
+
+    axios
+      .get(`${serverUrl}/stations/${Station}`)
+      .then(res => {
+        this.setState({ detail: res.data })
+      })
+      .catch(err => this.setState({ error: true }))
+  }
 
   render() {
     const { data, scalingFactor } = this.props
-    // console.log(this.state.time)
-    console.log(process.env)
+    const { detail } = this.state
 
     return (
       // scaling factor scales the size of everything to the size of the screen
@@ -33,34 +47,40 @@ class Station extends Component {
           {data.Station} - {data.City}, {data.State}
         </Header>
 
-        <UpdatedAt scalingFactor={scalingFactor}>
-          <b>Last updated:</b>{' '}
-          {moment(data.detail.meta.timestamp).format('LLLL')}
-        </UpdatedAt>
+        {detail && (
+          <>
+            <UpdatedAt scalingFactor={scalingFactor}>
+              <b>Last updated:</b>{' '}
+              {moment(detail.meta.timestamp).format('LLLL')}
+            </UpdatedAt>
 
-        <Detail scalingFactor={scalingFactor}>
-          <b>Clouds:</b>{' '}
-          {data.detail.clouds.length ? (
-            <List>
-              {data.detail.clouds.map(type => (
-                <ListItem scalingFactor={scalingFactor}>{type.repr}</ListItem>
-              ))}
-            </List>
-          ) : (
-            'skies are clear!'
-          )}
-        </Detail>
+            <Detail scalingFactor={scalingFactor}>
+              <b>Clouds:</b>{' '}
+              {detail.clouds.length ? (
+                <List>
+                  {detail.clouds.map((type, i) => (
+                    <ListItem key={i} scalingFactor={scalingFactor}>
+                      {type.repr}
+                    </ListItem>
+                  ))}
+                </List>
+              ) : (
+                'skies are clear!'
+              )}
+            </Detail>
 
-        <Detail scalingFactor={scalingFactor}>
-          <b>Wind:</b> {data.detail.wind_speed.repr} knots{' '}
-          {data.detail.wind_direction.repr} degrees
-        </Detail>
-        <Detail scalingFactor={scalingFactor}>
-          <b>Visibility:</b> {data.detail.visibility.repr} SM
-        </Detail>
-        <Detail scalingFactor={scalingFactor}>
-          <b>Temperature:</b> {data.detail.visibility.repr} C
-        </Detail>
+            <Detail scalingFactor={scalingFactor}>
+              <b>Wind:</b> {detail.wind_speed.repr} knots{' '}
+              {detail.wind_direction.repr} degrees
+            </Detail>
+            <Detail scalingFactor={scalingFactor}>
+              <b>Visibility:</b> {detail.visibility.repr} SM
+            </Detail>
+            <Detail scalingFactor={scalingFactor}>
+              <b>Temperature:</b> {detail.visibility.repr} C
+            </Detail>
+          </>
+        )}
       </Container>
     )
   }

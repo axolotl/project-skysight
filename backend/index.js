@@ -19,9 +19,7 @@ server.use(express.json())
 server.use(helmet())
 server.use(morgan('dev'))
 server.use(cors())
-
-console.log(api_url)
-console.log(api_secret)
+server.disable('etag')
 
 // request handlers (return promises)
 const get_stations = () => axios.get(`${api_url}/stations`, auth_header_object)

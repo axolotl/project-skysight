@@ -4,7 +4,6 @@ import axios from 'axios'
 
 import Station from './Station'
 import sampleData from '../sample_data'
-import { loadavg } from 'os'
 
 const serverUrl = process.env.REACT_APP_SERVER
 
@@ -43,8 +42,6 @@ class App extends Component {
   }
 
   getStations = () => {
-    console.log(serverUrl)
-
     axios
       .get(`${serverUrl}/stations`)
       .then(res => {
@@ -70,7 +67,7 @@ class App extends Component {
           </Loading>
         </Container>
       )
-    } else if (!stations.length) {
+    } else if (stations.length === 0) {
       return (
         <Container>
           <Loading scalingFactor={scalingFactor}>Loading ...</Loading>
