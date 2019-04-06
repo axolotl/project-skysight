@@ -12,6 +12,10 @@ class Station extends Component {
     const { data, scalingFactor } = this.props
 
     return (
+      // scaling factor scales the size of everything to the size of the screen
+      // this is useful because we want our components to scale to take up a
+      // consistent percentage of an arbitrarily large screen
+
       <Container scalingFactor={scalingFactor}>
         <Header scalingFactor={scalingFactor}>
           {data.Station} - {data.City}, {data.State}

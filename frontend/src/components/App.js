@@ -21,6 +21,8 @@ class App extends Component {
     scalingFactor: 1 // scaling factor is used to scale the size of the text and margins
   }
 
+  // componentDidMount and componentWillUnmount are written with arrow syntax
+  // in order to pass `this` to the event listener
   componentDidMount = () => {
     this.calculateScalingFactor()
     window.addEventListener('resize', this.calculateScalingFactor)
