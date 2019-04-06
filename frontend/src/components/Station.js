@@ -13,31 +13,38 @@ class Station extends Component {
 
     return (
       <Container>
-        <p>{data.Station}</p>
-        <p>
-          {data.City}, {data.State}
-        </p>
-        <p>Last updated: {moment(data.detail.meta.timestamp).format('LLLL')}</p>
+        <Header>
+          {data.Station} - {data.City}, {data.State}
+        </Header>
 
-        <p>
-          Clouds:{' '}
+        <UpdatedAt>
+          <b>Last updated:</b>{' '}
+          {moment(data.detail.meta.timestamp).format('LLLL')}
+        </UpdatedAt>
+
+        <Detail>
+          <b>Clouds:</b>{' '}
           {data.detail.clouds.length ? (
-            <ul>
+            <List>
               {data.detail.clouds.map(type => (
-                <li>{type.repr}</li>
+                <ListItem>{type.repr}</ListItem>
               ))}
-            </ul>
+            </List>
           ) : (
             'skies are clear!'
           )}
-        </p>
+        </Detail>
 
-        <p>
-          Wind: {data.detail.wind_speed.repr} knots{' '}
+        <Detail>
+          <b>Wind:</b> {data.detail.wind_speed.repr} knots{' '}
           {data.detail.wind_direction.repr} degrees
-        </p>
-        <p>Visibility: {data.detail.visibility.repr} SM</p>
-        <p>Temperature: {data.detail.visibility.repr} C</p>
+        </Detail>
+        <Detail>
+          <b>Visibility:</b> {data.detail.visibility.repr} SM
+        </Detail>
+        <Detail>
+          <b>Temperature:</b> {data.detail.visibility.repr} C
+        </Detail>
       </Container>
     )
   }
@@ -47,9 +54,34 @@ const Container = styled.div`
   flex: 1;
   margin: 20px;
   padding: 20px;
-  p {
-    font-size: 1.8rem;
+
+  > * {
+    margin-bottom: 15px;
   }
+`
+
+const Header = styled.h2`
+  font-size: 2.4rem;
+`
+
+const UpdatedAt = styled.h4`
+  font-size: 1.6rem;
+`
+
+const Detail = styled.div`
+  font-size: 1.8rem;
+
+  b {
+    font-weight: bold;
+  }
+`
+
+const List = styled.ul`
+  display: inline-flex;
+`
+
+const ListItem = styled.li`
+  margin-right: 0.5rem;
 `
 
 export default Station
