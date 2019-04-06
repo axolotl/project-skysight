@@ -11,7 +11,7 @@ import axios from 'axios'
 // netlify bulid is not seeing env vars so hardcoding the deployed backend url for now
 const serverUrl =
   process.env.REACT_APP_SERVER ||
-  'https://project-skysight-backend.herokuapp.com'
+  'https://project-skysight-backend.herokuapp.com/'
 
 class Station extends Component {
   state = { error: false, detail: false }
@@ -30,7 +30,7 @@ class Station extends Component {
     const { Station } = this.props.data
 
     axios
-      .get(`${serverUrl}/stations/${Station}`)
+      .get(`${serverUrl}stations/${Station}`)
       .then(res => {
         this.setState({ detail: res.data })
       })
