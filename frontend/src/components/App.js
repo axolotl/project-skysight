@@ -17,11 +17,25 @@ const chuckIntoRows = (array, size) => {
 
 class App extends Component {
   state = {
-    stations: sampleData
+    stations: sampleData,
+    scalingFactor: 1 // scaling factor is used to scale the size of the text and margins
+  }
+
+  componentDidMount = () => {
+    this.calculateScalingFactor()
+    window.addEventListener('resize', this.calculateScalingFactor)
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.calculateScalingFactor)
+  }
+
+  calculateScalingFactor = () => {
+    this.setState({ scalingFactor: window.innerWidth / 1200 })
   }
 
   render() {
-    const { stations } = this.state
+    const { stations, scalingFactor } = this.state
 
     // depending on how many stations there are, display data in as
     // close to a square as possible
@@ -34,7 +48,7 @@ class App extends Component {
         {chuckedStations.map((row, i) => (
           <Row key={i}>
             {row.map((station, i) => (
-              <Station key={i} data={station} />
+              <Station key={i} data={station} scalingFactor={scalingFactor} />
             ))}
           </Row>
         ))}
