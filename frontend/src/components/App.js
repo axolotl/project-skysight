@@ -5,7 +5,10 @@ import axios from 'axios'
 import Station from './Station'
 import sampleData from '../sample_data'
 
-const serverUrl = process.env.REACT_APP_SERVER
+// netlify bulid is not seeing env vars so hardcoding the deployed backend url for now
+const serverUrl =
+  process.env.REACT_APP_SERVER ||
+  'https://project-skysight-backend.herokuapp.com'
 
 // function for chucking statinos into rows to approximate a square
 const chuckIntoRows = (array, size) => {

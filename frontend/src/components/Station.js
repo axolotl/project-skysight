@@ -8,13 +8,17 @@ import axios from 'axios'
 // Visibility (if it's lower than 5 miles)
 // Temperature
 
-const serverUrl = process.env.REACT_APP_SERVER
+// netlify bulid is not seeing env vars so hardcoding the deployed backend url for now
+const serverUrl =
+  process.env.REACT_APP_SERVER ||
+  'https://project-skysight-backend.herokuapp.com'
 
 class Station extends Component {
   state = { error: false, detail: false }
 
   componentDidMount() {
     this.getStationData()
+    // update station data every 5 minutes
     this.interval = setInterval(() => this.getStationData(), 1000 * 60 * 5)
   }
 
